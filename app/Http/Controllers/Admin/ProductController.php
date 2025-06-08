@@ -3,63 +3,30 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Concerns\CrudActions;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+    use CrudActions;
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    protected string $model = Product::class;
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    protected function rules($id = null)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return [
+            'name' => 'required|string|max:255',
+            'slug' => ['required','string','max:255', Rule::unique('products','slug')->ignore($id)],
+            'brand_id' => 'nullable|exists:brands,id',
+            'category_id' => 'nullable|exists:categories,id',
+            'short_desc' => 'nullable|string',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric',
+            'sale_price' => 'nullable|numeric',
+            'stock' => 'required|integer',
+            'is_active' => 'boolean',
+        ];
     }
 }
