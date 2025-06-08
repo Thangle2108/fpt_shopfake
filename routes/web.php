@@ -40,9 +40,6 @@ Route::middleware(['auth','role:admin'])
      });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
