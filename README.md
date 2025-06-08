@@ -9,6 +9,28 @@
 
 ## About Laravel
 
+### Getting Started
+
+1. Copy the example environment file and install dependencies:
+
+```bash
+cp .env.example .env
+composer install
+```
+
+2. Generate the application key and run migrations:
+
+```bash
+php artisan key:generate
+php artisan migrate
+```
+
+3. Seed the initial data including the admin account:
+
+```bash
+php artisan db:seed --class=RoleSeeder
+```
+
 ### Admin Role Setup
 
 This project uses [Spatie Laravel Permission](https://github.com/spatie/laravel-permission) to handle roles.
