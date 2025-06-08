@@ -118,3 +118,4 @@ After logging in, visit `/admin` to access the admin panel. Only users with the
 ## Documentation
 
 Additional setup information is available in Vietnamese in [docs/HUONG_DAN.md](docs/HUONG_DAN.md). An English translation is provided in [docs/HUONG_DAN_EN.md](docs/HUONG_DAN_EN.md).
+Interface details for the category screens can be found in [docs/UI_DESIGN.md](docs/UI_DESIGN.md).
