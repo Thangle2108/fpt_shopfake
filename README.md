@@ -59,3 +59,59 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation
+
+1. Clone this repository and install PHP and Node.js dependencies:
+
+   ```bash
+   git clone <repository-url>
+   cd fpt_shopfake
+   composer install
+   npm install
+   ```
+
+2. Copy the example environment file and generate an application key:
+
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+3. Update the database credentials in `.env`, then run migrations and seeders:
+
+   ```bash
+   php artisan migrate --seed
+   ```
+
+4. Compile the frontend assets and start the local development server:
+
+   ```bash
+   npm run dev
+   php artisan serve
+   ```
+
+## Running Migrations and Seeders
+
+To run database migrations separately use:
+
+```bash
+php artisan migrate
+```
+
+You can populate the database with seed data using:
+
+```bash
+php artisan db:seed
+```
+
+The default seeder creates a user account with the following credentials:
+
+- **Email:** `test@example.com`
+- **Password:** `password`
+
+## Admin Access
+
+After logging in, visit `/admin` to access the admin panel. Only users with the
+`admin` role may view this area. You can assign the role to an existing user via
+`php artisan tinker` using the [spatie/laravel-permission](https://github.com/spatie/laravel-permission) package.
