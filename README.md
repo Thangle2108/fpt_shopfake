@@ -105,13 +105,12 @@ You can populate the database with seed data using:
 php artisan db:seed
 ```
 
-The default seeder creates a user account with the following credentials:
+The default seeder creates an administrator account with the following credentials:
 
-- **Email:** `test@example.com`
+- **Email:** `admin@example.com`
 - **Password:** `password`
 
 ## Admin Access
 
 After logging in, visit `/admin` to access the admin panel. Only users with the
-`admin` role may view this area. You can assign the role to an existing user via
-`php artisan tinker` using the [spatie/laravel-permission](https://github.com/spatie/laravel-permission) package.
+`admin` role may view this area. The seeded administrator user already has this role assigned.
