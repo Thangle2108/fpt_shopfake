@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function(){
 Route::middleware(['auth','role:admin'])
      ->prefix('admin')->name('admin.')
      ->group(function(){
+        Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('products', Admin\ProductController::class);
         Route::resource('order-items', Admin\OrderItemController::class);
         // …và các resource khác tương tự
