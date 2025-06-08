@@ -14,7 +14,7 @@
 3. Tạo khóa ứng dụng và chạy migration
    ```bash
    php artisan key:generate
-   php artisan migrate
+   php artisan migrate --seed
    ```
 4. Khởi chạy server phát triển
    ```bash
@@ -22,3 +22,8 @@
    ```
 
 Sau khi hoàn tất, truy cập địa chỉ hiển thị trên terminal để xem website.
+
+Tài khoản quản trị mặc định:
+
+- Email: `admin@example.com`
+- Mật khẩu: `password`
