@@ -114,3 +114,7 @@ The default seeder creates an administrator account with the following credentia
 
 After logging in, visit `/admin` to access the admin panel. Only users with the
 `admin` role may view this area. The seeded administrator user already has this role assigned.
+
+## Documentation
+
+Additional setup information is available in Vietnamese in [docs/HUONG_DAN.md](docs/HUONG_DAN.md). An English translation is provided in [docs/HUONG_DAN_EN.md](docs/HUONG_DAN_EN.md).
